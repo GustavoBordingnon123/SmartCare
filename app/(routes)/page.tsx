@@ -7,4 +7,6 @@ export default function Page(){
     const router = useRouter();
 
     router.push('/login')
+
+    return null;
 }
