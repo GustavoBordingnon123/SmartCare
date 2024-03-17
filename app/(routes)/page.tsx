@@ -1,12 +1,24 @@
-"use client";
+// "use client";
 
 
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
-export default function Page(){
-    const router = useRouter();
+// export default function Page(){
+//     const router = useRouter();
 
-    router.push('/login')
+//     router.push('/login')
 
-    return null;
+//     return null;
+// }
+
+import React from 'react'
+
+const PageTeste = () => {
+  return (
+    <div>
+      tst
+    </div>
+  )
 }
+
+export default PageTeste
