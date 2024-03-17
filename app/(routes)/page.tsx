@@ -1,5 +1,10 @@
+"use client";
+
+
+import { useRouter } from "next/navigation";
+
 export default function Page(){
-    return(
-        <p>Oi</p>
-    )
+    const router = useRouter();
+
+    router.push('/login')
 }
