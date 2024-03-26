@@ -2,50 +2,62 @@ import React from 'react'
 import Image from 'next/image'
 import Kawan from '@/public/kawan.jpg';
 
-import Button from '@/app/components/button'
-import Input from '@/app/components/input'
-import Navbar from '@/app/components/navbar'
-import Separator from '@/app/components/separator'
+import Button from '@/app/components/ui/separator/button'
+import Input from '@/app/components/ui/separator/input'
+import Navbar from '@/app/components/sideBar'
+import Separator from '@/app/components/ui/separator'
 
 
 import { Pencil, TriangleAlert } from 'lucide-react';
+import InputField from '@/app/components/ui/separator/inputNew';
  
 const Profile = () => {
 
-    return (
-      <div className="min-h-screen min-w-screen flex flex-col pt-[10%] gap-5 ml-10">
+    const inputCampos = [
+      {
+        text: 'Kawan brito'
+      },
+      {
+        text: 'kawanzinho@gmail.com'
+      },
+      {
+        text: '124.222.576-56'
+      },
+      {
+        text: '********'
+      },
+    ]
 
-          <div className='flex gap-5 items-center'>
+    return (
+      <div className="flex flex-col gap-5 ml-10 py-8">
+
+          <div className='flex gap-5 justify-center items-center'>
 
             <div 
-              className='flex justify-center items-center bg-white h-[80px] w-[80px] rounded-full'
+              className='flex justify-center items-center bg-white h-32 w-32 rounded-full'
               style={{ backgroundImage: `url(${Kawan.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             />
             
 
-            <Input label='Seu nome' placeholder='Edite aqui seu nome...' labelColor='white' />
+            {/* <Input label='Seu nome' placeholder='Edite aqui seu nome...' labelColor='white' /> */}
 
           </div>
 
-          <div className='my-10 h-full flex flex-col gap-5 justify-center'>
+          <div className='my-10 h-full flex flex-col gap-5 justify-center  items-center'>
 
             <p className='text-3xl text-white'>Dados pessoais:</p>
+          
+            <Separator  width='300px'/>
 
-            <Separator />
+            {inputCampos.map((opcao, index) => (
+              <InputField label={opcao.text} />
+            ))}
 
-            <Input label='Seu nome' placeholder='Edite aqui seu nome...' labelColor='white' />
-
-            <Input label='Seu Email' placeholder='Edite aqui seu email...' labelColor='white' />
-
-            <Input label='Seu cpf' placeholder='Edite aqui seu cpf...' labelColor='white' />
-
-            <Input label='Sua senha' placeholder='Edite aqui sua senha...' labelColor='white' />
-
-            <Separator />
+            <Separator  width='300px'/>
 
           </div>
 
-          <div className='flex flex-col gap-5'>
+          <div className='flex flex-col gap-5  items-center'>
 
             <Button text='Salvar Mudanças' href='/profile' icon={<Pencil color='white'/>}/>
 

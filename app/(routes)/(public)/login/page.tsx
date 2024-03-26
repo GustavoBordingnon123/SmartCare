@@ -2,8 +2,8 @@ import Image from "next/image";
 import logo from '@/public/logo.png';
 import background from '@/public/futebolHome.png'; 
 
-import Input from "@/app/components/input";
-import Button from "@/app/components/button";
+import Input from "@/app/components/ui/separator/input";
+import Button from "@/app/components/ui/separator/button";
 
 const LoginPage = () => {
 
@@ -16,7 +16,7 @@ const LoginPage = () => {
                     style={{ backgroundImage: `url(${background.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                     <p className="text-5xl uppercase text-white">Faça seu login!</p>
-                    <p className="text-3xl uppercase text-white">e começe a evoluir com a gente!  </p>
+                    <p className="text-2xl uppercase text-white">e começe a evoluir com a gente!  </p>
                 </section>
 
                 <section className='flex flex-col items-center justify-center gap-5 bg-[#FFFFFF] w-full'>

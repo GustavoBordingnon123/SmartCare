@@ -5,7 +5,7 @@ import Logo from '@/public/logo.png'
 import Image from 'next/image'
 
 
-import Navbar from '../../components/navbar'
+import Sidebar from '../../components/sideBar'
 
 
 const font = Urbanist({ subsets: ['latin'] })
@@ -23,21 +23,15 @@ export default function RootLayout({
   }) {
     return (
       <html lang="en">
-        <body className={`${font.className}, flex gap-2 w-full`}>
+        <body className={`${font.className}, flex gap-2 w-full bg-mediumBlue`}>
          
-            <main className='flex w-full'>  
+            <main className='flex w-full h-full'>  
 
-              <div className='pl-20 pt-10 flex flex-col gap-20'> 
-                  <Image
-                      src={Logo}
-                      alt='logo' 
-                      height={70}
-                  />
-                  
-                  <Navbar />
+              <div className='h-full w-64'> 
+                  <Sidebar />
               </div>
 
-              <div className='h-screen w-[100%]'>
+              <div className='min-h-screen h-full w-[100%] bg-mediumBlue'>
                 {children}
               </div>
 
