@@ -9,7 +9,7 @@ const Calendar: React.FC = () => {
 
     useEffect(() => {
         generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
-    }, [currentDate, selectedDay]); // Adicionei selectedDay aqui para re-renderizar quando o dia selecionado mudar
+    }, [currentDate, selectedDay]); 
 
     const currentMonth = () => {
         const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -19,27 +19,20 @@ const Calendar: React.FC = () => {
     function generateCalendar(year: number, month: number) {
         const calendarDays: JSX.Element[] = [];
 
-        // Crie um objeto de data para o primeiro dia do mês especificado
         const firstDayOfMonth = new Date(year, month, 1);
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // Calcule o dia da semana para o primeiro dia do mês (0 - Domingo, 1 - Segunda-feira, ..., 6 - Sábado)
         const firstDayOfWeek = firstDayOfMonth.getDay();
 
-        // Crie caixas vazias para os dias antes do primeiro dia do mês
         for (let i = 0; i < firstDayOfWeek; i++) {
-            calendarDays.push(<div key={`empty_${i}`} className="text-center py-2 border"></div>);
+            calendarDays.push(<div key={`empty_${i}`} className="text-center py-2 shadow-lg rounded-lg"></div>);
         }
 
-        // Crie caixas para cada dia do mês
         for (let day = 1; day <= daysInMonth; day++) {
-            const isCurrentDay = year === currentDate.getFullYear() && month === currentDate.getMonth() && day === currentDate.getDate();
             const isSelectedDay = day === selectedDay;
 
-            let dayClasses = 'text-center py-2 border cursor-pointer';
+            let dayClasses = 'text-center py-2 shadow-lg cursor-pointer rounded-lg';
             if (isSelectedDay) {
-                dayClasses += ' bg-green text-white';
-            } else if (isCurrentDay) {
                 dayClasses += ' bg-green text-white';
             }
 
@@ -55,12 +48,12 @@ const Calendar: React.FC = () => {
 
     const handlePrevMonth = () => {
         setCurrentDate(prevDate => new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, prevDate.getDate()));
-        setSelectedDay(null); // Resetar o dia selecionado ao mudar de mês
+        setSelectedDay(null);
     };
 
     const handleNextMonth = () => {
         setCurrentDate(prevDate => new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, prevDate.getDate()));
-        setSelectedDay(null); // Resetar o dia selecionado ao mudar de mês
+        setSelectedDay(null);
     };
 
     return (
@@ -86,4 +79,3 @@ const Calendar: React.FC = () => {
 };
 
 export default Calendar;
-

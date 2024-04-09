@@ -1,17 +1,11 @@
-// "use client";
-
-
-// import { useRouter } from "next/navigation";
-
-// export default function Page(){
-//     const router = useRouter();
-
-//     router.push('/login')
-
-//     return null;
-// }
-
 import React from 'react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'SmartCare',
+  description: 'site para acompanhamento de saude e bem estar',
+}
+
 
 const PageTeste = () => {
   return (

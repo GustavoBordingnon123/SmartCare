@@ -1,10 +1,7 @@
 import React from 'react'
-import Image from 'next/image'
 import Kawan from '@/public/kawan.jpg';
 
 import Button from '@/app/components/ui/separator/button'
-import Input from '@/app/components/ui/separator/input'
-import Navbar from '@/app/components/sideBar'
 import Separator from '@/app/components/ui/separator'
 
 

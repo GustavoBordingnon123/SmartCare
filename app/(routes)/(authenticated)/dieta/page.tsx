@@ -94,12 +94,12 @@ const Dieta = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-5 ml-10 py-8">
+    <div className="flex justify-center flex-col gap-5 py-8 w-full">
       {/* Café da manhã */}
-      <div className='flex flex-col gap-8'>
+      <div className='flex items-center flex-col gap-8 mt-16 w-full'>
         <p className='text-3xl text-white font-extrabold'>Café da manhã</p>
         <Separator />
-        <div className='flex flex-col gap-24'>
+        <div className='flex items-center flex-col gap-8 mt-16 w-full'>
           {cafeDaManhaOpcoes.map((opcao, index) => (
             <DietCard key={index} title={opcao.title} text={opcao.text} />
           ))}
@@ -107,10 +107,10 @@ const Dieta = () => {
       </div>
 
       {/* Almoço */}
-      <div className='flex flex-col gap-8 mt-16'>
+      <div className='flex items-center flex-col gap-8 mt-16 w-full'>
         <p className='text-3xl text-white font-extrabold'>Almoço</p>
         <Separator />
-        <div className='flex flex-col gap-24'>
+        <div className='flex items-center flex-col gap-8 mt-16 w-full'>
           {almocoOpcoes.map((opcao, index) => (
             <DietCard key={index} title={opcao.title} text={opcao.text} />
           ))}
@@ -118,15 +118,16 @@ const Dieta = () => {
       </div>
 
       {/* Jantar */}
-      <div className='flex flex-col gap-8 mt-16'>
+      <div className='flex items-center flex-col gap-8 mt-16 w-full'>
         <p className='text-3xl text-white font-extrabold'>Jantar</p>
         <Separator />
-        <div className='flex flex-col gap-24'>
+        <div className='flex items-center flex-col gap-8 mt-16 w-full'>
           {jantaOpcoes.map((opcao, index) => (
             <DietCard key={index} title={opcao.title} text={opcao.text} />
           ))}
         </div>
       </div>
+
     </div>
   );
 };
