@@ -17,7 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${font.className}, flex gap-2 w-full bg-mediumBlue`}>
         <main className="flex w-full h-full">
-          <div className={`h-full w-${sideBarOpen ? '64' : '18'}  transition-all duration-300 ease-in-out`}>
+          <div 
+            className={`w-${sideBarOpen ? '[250px]' : '[64px]'}`}
+            style={{ width: sideBarOpen ? '250px' : '64px', transition: 'width 0.5s' }}
+          >
             <Sidebar setSideBarOpen={setSideBarOpen} sideBarOpen={sideBarOpen} />
           </div>
           <div className="min-h-screen h-full w-[100%] bg-mediumBlue">
