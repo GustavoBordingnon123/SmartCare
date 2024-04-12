@@ -9,7 +9,7 @@ import useSwitchStore from '@/hooks/useSwitchStore';
 import Kawan from '@/public/kawan.jpg';
 
 interface SideBarProps {
-  setSideBarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setSideBarOpen:any;
   sideBarOpen: boolean;
 }
 
@@ -38,7 +38,7 @@ const SideBar = ({ setSideBarOpen, sideBarOpen }: SideBarProps) => {
       className={`h-full ${SideBarBgColor} fixed flex flex-col px-2 z-50 $`}
       style={{ width: sideBarOpen ? '250px' : '64px', transition: 'width 0.5s' }}
     >
-      <div>
+      <div className='h-full'>
         <div 
           className={`w-full h-[${sideBarOpen ? 14 : 8}] border-b ${borderColor} flex justify-between items-center px-2 py-8`}
         >
@@ -85,7 +85,7 @@ const SideBar = ({ setSideBarOpen, sideBarOpen }: SideBarProps) => {
         </div>
 
         {sideBarOpen && (
-          <div className='w-full h-[100%] flex justify-start items-end px-2 py-4'>
+          <div className='w-full h-[50%] flex justify-start items-end px-2 py-4'>
             <div className='flex gap-2 w-full '>
               <Moon color='#0E3043' />
               <Switch />
@@ -95,7 +95,7 @@ const SideBar = ({ setSideBarOpen, sideBarOpen }: SideBarProps) => {
         )}
 
         {!sideBarOpen && (
-          <div className='w-full h-[100%] flex justify-start items-end px-2 py-4'>
+          <div className='w-full h-[62.5%] flex justify-start items-end px-2 py-4'>
             <div className='flex gap-2 w-full '>
               {toggle && <Sun color='#F9C341' onClick={() => setToggle(!toggle)} />}
               {!toggle && <Moon color='#0E3043'  onClick={() => setToggle(!toggle)} />}

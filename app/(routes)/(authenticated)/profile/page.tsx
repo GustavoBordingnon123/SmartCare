@@ -47,7 +47,7 @@ const Profile = () => {
             <Separator  width='300px'/>
 
             {inputCampos.map((opcao, index) => (
-              <InputField label={opcao.text} />
+              <InputField key={index} label={opcao.text} />
             ))}
 
             <Separator  width='300px'/>

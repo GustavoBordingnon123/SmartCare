@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Urbanist } from 'next/font/google';
-import Sidebar from '../../components/sideBar';
+import Sidebar from '../../components/sideBar'
 
 const font = Urbanist({ subsets: ['latin'] });
 
