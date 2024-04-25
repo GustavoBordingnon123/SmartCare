@@ -33,6 +33,7 @@ const Button = ({ text, width, onClick, href, type = 'default', icon }: ButtonPr
     return (
         <a
          className={`${buttonClasses} overflow-hidden w-32 p-2 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group`}
+         onClick={handleClick}
         >
         {text}
         {icon}
