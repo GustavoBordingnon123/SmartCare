@@ -11,18 +11,19 @@ import Kawan from '@/public/kawan.jpg';
 interface SideBarProps {
   setSideBarOpen:any;
   sideBarOpen: boolean;
+  items: any;
 }
 
-const SideBar = ({ setSideBarOpen, sideBarOpen }: SideBarProps) => {
+const SideBar = ({ setSideBarOpen, sideBarOpen, items }: SideBarProps) => {
   const pathname = usePathname();
   const { toggle, setToggle } = useSwitchStore();
   
-  const items = [
-    { label: 'Perfil', href: '/profile', icon: <User /> },
-    { label: 'Agenda', href: '/agenda', icon: <CalendarCheck /> },
-    { label: 'Dieta', href: '/dieta', icon: <Utensils /> },
-    { label: 'Registros medicos', href: '/registros', icon: <Hospital /> },
-  ];
+  // const items = [
+  //   { label: 'Perfil', href: '/profile', icon: <User /> },
+  //   { label: 'Agenda', href: '/agenda', icon: <CalendarCheck /> },
+  //   { label: 'Dieta', href: '/dieta', icon: <Utensils /> },
+  //   { label: 'Registros medicos', href: '/registros', icon: <Hospital /> },
+  // ];
   
   const SideBarBgColor = toggle ? 'bg-darkBlue' : 'bg-yellow';
   const borderColor = toggle ? 'border-darkBlue-100' : 'border-yellow-100';
@@ -73,7 +74,7 @@ const SideBar = ({ setSideBarOpen, sideBarOpen }: SideBarProps) => {
         <div className={`w-full border-b ${borderColor} px-2 py-4`}>
           <p className={`text-xl ${textColor} ${sideBarOpen ? '' : 'hidden'} mb-4 font-bold `}>Overview</p>
           <ul className='flex flex-col gap-5'>
-            {items.map((item, index) => (
+            {items.map((item:any, index:any) => (
               <li key={index} className=''>
                 <a href={item.href} className={`flex gap-2 cursor-pointer hover:text-[#4CAF50] ${pathname === item.href ? `${activeColor}` : `${textColor}`}`}>
                   {item.icon}

@@ -1,6 +1,5 @@
 import React from 'react'
-import Kawan from '@/public/kawan.jpg';
-
+import Kawan from '@/public/kawan.jpg'
 import Button from '@/app/components/ui/separator/button'
 import Separator from '@/app/components/ui/separator'
 
@@ -56,9 +55,18 @@ const Profile = () => {
 
           <div className='flex flex-col gap-5  items-center'>
 
-            <Button text='Salvar Mudanças' href='/profile' icon={<Pencil color='white'/>}/>
+            <Button 
+              text='Salvar' 
+              href='/profile'  
+              icon={<Pencil color='white' />}
+            />
 
-            <Button text='Excluir conta' href='/profile' type='danger' icon={<TriangleAlert color='white'/>}/>
+            <Button 
+              text='Excluir' 
+              href='/profile' 
+              type='danger'  
+              icon={<TriangleAlert color='white'/>} 
+            />
 
           </div>
 
