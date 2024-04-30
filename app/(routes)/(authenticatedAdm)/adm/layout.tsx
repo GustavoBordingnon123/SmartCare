@@ -3,7 +3,7 @@
 import React from 'react';
 import { Urbanist } from 'next/font/google';
 import Sidebar from '@/app/components/sideBar';
-import { User } from 'lucide-react';
+import { User, Apple, Dumbbell } from 'lucide-react';
 
 const font = Urbanist({ subsets: ['latin'] });
 
@@ -16,8 +16,8 @@ export default function RootLayout({
 
   const items = [
     { label: 'Athletes', href: '/adm/athletes', icon: <User /> },
-    { label: 'Exercises Plans', href: '/adm/workoutPlans', icon: <User /> },
-    { label: 'Diets Plans', href: '/adm/workoutPlans', icon: <User /> },
+    { label: 'Exercises Plans', href: '/adm/workoutPlans', icon: <Dumbbell /> },
+    { label: 'Diets Plans', href: '/adm/dietPlans', icon: <Apple /> },
   ];
 
   return (

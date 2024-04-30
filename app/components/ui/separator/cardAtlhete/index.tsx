@@ -4,9 +4,12 @@ import Button from '@/app/components/ui/separator/button'
 
 interface CardAtlheteProps {
     name: string;
+    onClick: () => void;
 }
 
-const CardAtlhete = ({ name }: CardAtlheteProps) => {
+const CardAtlhete = ({ name, onClick }: CardAtlheteProps) => {
+
+   
     return (
         <div 
         className="
@@ -25,7 +28,7 @@ const CardAtlhete = ({ name }: CardAtlheteProps) => {
 
                 <p className='text-2xl text-[#7D828C] font-bold'>{name}</p>
 
-                <Button text='ver dados' />
+                <Button text='ver dados' onClick={onClick}/>
 
 
             </div>
